@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间会映射到接口-->
+<mapper namespace="github.messnoob.november.model.mapper.HostMapper">
+    <!--parameterType 参数类型 -->
+    <!--resultType 返回结果集类型 -->
+    <!--查询所有数据-->
+    <insert id="addHost">
+        insert into host(host, port, user, password) values (#{host}, #{port}, #{user}, #{password});
+    </insert>
+    <delete id="deleteHost">
+        delete from host where id = #{id};
+    </delete>
+    <select id="getHostRecords" resultType="github.messnoob.november.model.pojo.Host">
+        select * from host;
+    </select>
+    <select id="getHostInfo" resultType="github.messnoob.november.model.pojo.Host">
+        select * from host where id = #{id};
+    </select>
+
+</mapper>

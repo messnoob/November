@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间会映射到接口-->
+<mapper namespace="github.messnoob.november.model.mapper.InstanceMapper">
+    <!--parameterType 参数类型 -->
+    <!--resultType 返回结果集类型 -->
+    <!--查询所有数据-->
+    <insert id="installInstance">
+        insert into instances(instance_name, instance_type, host_id) values (#{instance_name}, #{instance_type}, #{host_id});
+    </insert>
+    <delete id="uninstallInstance">
+        delete from instances where id = #{id};
+    </delete>
+    <select id="getInstanceRecords" resultType="github.messnoob.november.model.pojo.Instance">
+        select * from instances;
+    </select>
+
+</mapper>
+
